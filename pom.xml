@@ -4,7 +4,6 @@
     Copyright 2014, Red Hat, Inc. and/or its affiliates, and individual
     contributors by the @authors tag. See the copyright.txt in the
     distribution for a full listing of individual contributors.
-
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
     You may obtain a copy of the License at
@@ -59,14 +58,18 @@
         </repository>
     </repositories>
 
-    <distributionManagement>
+   <distributionManagement>
         <repository>
-            <id>nexus</id>
-            <url>http://nexus:8081/content/repositories/releases</url>
+            <id>releases</id>
+            <name>Opticca Releases Repository</name>
+            <url>http://nexus-ci-cd.192.168.99.100.nip.io/repository/maven-releases</url>
+            <layout>default</layout>
         </repository>
         <snapshotRepository>
-            <id>nexus</id>
-            <url>http://nexus:8081/content/repositories/snapshots</url>
+            <id>snapshots</id>
+            <name>Opticca Snapshots Repository</name>
+            <url>http://nexus-ci-cd.192.168.99.100.nip.io/repository/maven-snapshots/</url>
+            <layout>default</layout>
         </snapshotRepository>
     </distributionManagement>
 
@@ -182,49 +185,50 @@
                 <artifactId>sonar-maven-plugin</artifactId>
                 <version>3.3.0.603</version>
             </plugin>
-            <plugin>
-                <groupId>org.jacoco</groupId>
-                <artifactId>jacoco-maven-plugin</artifactId>
-                <version>0.7.9</version>
-                <executions>
-                    <execution>
-                        <id>default-prepare-agent</id>
-                        <goals>
-                            <goal>prepare-agent</goal>
-                        </goals>
-                    </execution>
-                    <execution>
-                        <id>default-report</id>
-                        <phase>prepare-package</phase>
-                        <goals>
-                            <goal>report</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.ec4j.maven</groupId>
-                <artifactId>editorconfig-maven-plugin</artifactId>
-                <version>0.0.5</version>
-                <executions>
-                    <execution>
-                        <id>check</id>
-                        <phase>verify</phase>
-                        <goals>
-                            <goal>check</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <excludes>
-                        <exclude>deployments/**</exclude>
-                        <exclude>src/main/webapp/css/*</exclude>
-                        <exclude>src/main/webapp/fonts/*</exclude>
-                        <exclude>src/main/webapp/img/*</exclude>
-                        <exclude>src/main/webapp/js/*</exclude>
-                    </excludes>
-                </configuration>
-            </plugin>
+            
+<!--             <plugin> -->
+<!--                 <groupId>org.jacoco</groupId> -->
+<!--                 <artifactId>jacoco-maven-plugin</artifactId> -->
+<!--                 <version>0.7.9</version> -->
+<!--                 <executions> -->
+<!--                     <execution> -->
+<!--                         <id>default-prepare-agent</id> -->
+<!--                         <goals> -->
+<!--                             <goal>prepare-agent</goal> -->
+<!--                         </goals> -->
+<!--                     </execution> -->
+<!--                     <execution> -->
+<!--                         <id>default-report</id> -->
+<!--                         <phase>prepare-package</phase> -->
+<!--                         <goals> -->
+<!--                             <goal>report</goal> -->
+<!--                         </goals> -->
+<!--                     </execution> -->
+<!--                 </executions> -->
+<!--             </plugin> -->
+<!--             <plugin> -->
+<!--                 <groupId>org.ec4j.maven</groupId> -->
+<!--                 <artifactId>editorconfig-maven-plugin</artifactId> -->
+<!--                 <version>0.0.5</version> -->
+<!--                 <executions> -->
+<!--                     <execution> -->
+<!--                         <id>check</id> -->
+<!--                         <phase>verify</phase> -->
+<!--                         <goals> -->
+<!--                             <goal>check</goal> -->
+<!--                         </goals> -->
+<!--                     </execution> -->
+<!--                 </executions> -->
+<!--                 <configuration> -->
+<!--                     <excludes> -->
+<!--                         <exclude>deployments/**</exclude> -->
+<!--                         <exclude>src/main/webapp/css/*</exclude> -->
+<!--                         <exclude>src/main/webapp/fonts/*</exclude> -->
+<!--                         <exclude>src/main/webapp/img/*</exclude> -->
+<!--                         <exclude>src/main/webapp/js/*</exclude> -->
+<!--                     </excludes> -->
+<!--                 </configuration> -->
+<!--             </plugin> -->
         </plugins>
     </build>
 
